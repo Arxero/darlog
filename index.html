@@ -1,0 +1,19 @@
+---
+layout: default
+---
+
+
+
+<ul class="posts-container">
+  {% for post in paginator.posts %}
+  <li class="post">
+    <h2><a href="{{ post.url | prepend: site.baseurl | replace: '//', '/' }}">{{ post.title }}</a></h2>
+    
+    <span class="post-author">{{ post.author}}</span>
+    <span class="post-delimiter">•</span>
+    <span class="post-date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date_to_string }}</span>
+
+    <p class="post-preview">{{ post.content | strip_html | truncatewords:40 }}</p>
+  </li>
+  {% endfor %}
+</ul>

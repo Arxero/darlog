@@ -1,0 +1,17 @@
+<div class="header-wrapper">
+  <header>
+
+    <div class="site-title">
+      <a href="{{ '/' | prepend: site.baseurl | replace: '//', '/' }}">
+        {{ site.title }}
+      </a>
+    </div>
+
+    <nav>
+      <ul class="first-level">
+        {% include links.html %}
+      </ul>
+    </nav>
+
+  </header>
+</div>

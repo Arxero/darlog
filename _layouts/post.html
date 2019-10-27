@@ -1,0 +1,14 @@
+---
+layout: default
+---
+
+<article class="post-wrapper">
+  <h2 class="">{{ page.title }}</h2>
+  <span class="post-author">{{ page.author}}</span>
+  <span class="post-delimiter">•</span>
+  <span class="post-date" datetime="{{ post.date | date_to_xmlschema }}">{{ page.date | date_to_string }}</span>
+
+  <div class="post-content">
+    {{ content }}
+  </div>
+</article>

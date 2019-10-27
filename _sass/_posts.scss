@@ -1,0 +1,61 @@
+.posts-container {
+  margin-left: 0;
+
+  li {
+    list-style: none;
+  }
+
+  h2 {
+    margin-bottom: -5px;
+  }
+
+  a {
+    transition: all 450ms;
+  }
+
+  .post {
+    background: $dark;
+    padding: .9rem;
+    margin-bottom: 1.3rem;
+    border-radius: 5px;
+    border: 1px solid transparent;
+    transition: all 450ms;
+
+    &:hover {
+      filter: brightness(110%);
+      box-shadow: 0 10px 12px rgba(0,0,0,.12);
+      border-color: $nav-blue;
+    }
+
+    &:hover a {
+      filter: brightness(110%);
+      text-decoration: none;
+    }
+  }
+
+  .post-preview {
+    padding-top: 1rem;
+  }
+}
+
+.post-author, .post-delimiter {
+  font-size: .9rem;
+  filter: brightness(90%);
+}
+
+.post-date {
+  filter: brightness(70%);
+  font-size: .8rem;
+}
+
+.post-wrapper {
+  h2 {
+    margin-bottom:  -5px;
+  }
+
+  .post-content {
+    padding-top: 1rem;
+  }
+}
+
+

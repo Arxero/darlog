@@ -1,0 +1,59 @@
+@import 'https://use.fontawesome.com/releases/v5.5.0/css/all.css';
+@import 'https://fonts.googleapis.com/css?family=Roboto';
+@import './reset';
+@import './variables';
+@import './typography';
+@import './navigation';
+@import './rouge-base16-dark.scss';
+@import './syntax-highlighting';
+@import './posts.scss';
+
+$background-color: $dark !default;
+$text-color: $text-color !default;
+
+
+body {
+  background: $background-color;
+  color: $text-color;
+  line-height: 1.5;
+  font-family: $base-font-family;
+  font-size: $base-font-size;
+}
+
+.site-wrapper {
+  max-width: 63.25rem;
+  margin: 0 auto;
+  background: #222222;
+  padding: .5rem 2rem;
+  display: block;
+  min-height: calc(100vh - 50px);
+}
+
+main {
+  display: block; /* Default value of `display` of `main` element is 'inline' in IE 11. */
+}
+
+section {
+  display: block;
+  margin: 0 0 20px 0;
+}
+
+img {
+  max-width: 100%;
+  vertical-align: middle;
+  border-radius: 3px;
+  box-shadow: $weak-box-shadow;
+}
+
+.pagination, footer {
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+}
+
+@media screen and (max-width: 480px) {
+  .site-wrapper {
+    padding: .5rem .5rem;
+  }
+}
+

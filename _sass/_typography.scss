@@ -1,0 +1,143 @@
+/**
+ * Set `margin-bottom` to maintain vertical rhythm
+ */
+ h1, h2, h3, h4, h5, h6,
+ p, blockquote, pre,
+ ul, ol, dl, figure,
+ %vertical-rhythm {
+   margin-bottom: $spacing-unit / 2;
+ }
+
+dt {
+  font-style: italic;
+  font-weight: 700;
+}
+
+dd {
+  display: block;
+  margin-inline-start: 40px;
+}
+
+/**
+ * Figures
+ */
+ figure > img {
+  display: block;
+}
+
+figcaption {
+  font-size: $small-font-size;
+}
+
+/**
+ * Lists
+ */
+ ul, ol {
+  margin-left: $spacing-unit;
+}
+
+li {
+  > ul,
+  > ol {
+    margin-bottom: 0;
+  }
+}
+
+
+.header-link {
+  font-size: 1.5rem;
+  margin-left: 10px;
+  display: none;
+  vertical-align: middle;
+  margin-top: -5px;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+
+/**
+ * Headings
+ */
+ h1 {
+  font-size: 2rem;
+}
+
+ h1, h2, h3, h4, h5, h6 {
+  font-weight: $base-font-weight;
+
+  &:hover .header-link{
+    display: inline-block;
+  }
+
+}
+
+/**
+ * Links
+ */
+ a {
+  color: $link-color;
+  text-decoration: none;
+
+  &:visited {
+    color: darken($link-color, 15%);
+  }
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+/**
+ * Blockquotes
+ */
+ blockquote {
+  color: $grey-color;
+  border-left: 4px solid $nav-blue;
+  padding: 1rem;
+  border-radius: 3px;
+  padding-left: $spacing-unit / 2;
+  font-style: italic;
+  background: #333;
+  box-shadow: 0 1px 10px rgba(0,0,0,0.3), 0 1px 0 rgba(255,255,255,0.1), 0 -1px 0 rgba(0,0,0,0.5);
+  transition: all 450ms;
+  
+  > :last-child {
+    margin-bottom: 0;
+  }
+  
+  &:hover {
+    border-left: 4px solid rgb(0, 172, 0);
+  } 
+}
+
+/**
+ * Tables
+ */
+ table {
+  margin-bottom: $spacing-unit;
+  width: 100%;
+  text-align: left;
+  color: $text-color;
+  border-collapse: collapse;
+  border: 1px solid $dark;
+  box-shadow: $inset-box-shadow;
+
+  tr {
+    &:nth-child(even) {
+      background-color: #333333;
+      transition: all 450ms;
+    }
+    &:hover {
+      background-color: $dark;
+    }
+  }
+  th, td {
+    padding: ($spacing-unit / 3) ($spacing-unit / 2);
+  }
+  th {
+    background-color: $nav-blue;
+    border-bottom: 1px solid $dark;
+  }
+}
