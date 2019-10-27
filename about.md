@@ -6,50 +6,163 @@ permalink: about
 
 # Darlog blog theme
 
-Darlog theme is minimalistic dark theme and is suitable for any kind of blogging. Theme is made not without the help of [Hacker-Blog](https://github.com/tocttou/hacker-blog) one, thus anything that is true for it
+Darlog theme is a minimalistic dark theme for Jekyll and is suitable for any kind of blogging. Theme is made not without the help of [Hacker-Blog](https://github.com/tocttou/hacker-blog) one, thus anything that is true for it
 is also true for this one so I suggest you go there and checkout the desciption for more details.
 
 [Demo](https://darlog-theme.netlify.com/)
 
+
+## Presequence
+[Ruby](https://jekyllrb.com/docs/)
+
+
+    jekyll new my-blog
+
+
+and open your code editor in that folder which would be `my-blog` in this case.
 
 ## Installation
 
 Add this line to your Jekyll site's `Gemfile`:
 
 ```ruby
-gem "darlog"
+gem "darlog", "~> 0.1.1"
 ```
 
 And add this line to your Jekyll site's `_config.yml`:
 
 ```yaml
+paginate: 4
+```
+
+Change the theme `darlog` in the same `_config.yml`
+```yaml
 theme: darlog
+```
+
+And add the theme plugins in the `Gemfile`, last 3 rows are the theme specific, the first one should be there by default.
+```yaml
+group :jekyll_plugins do
+  gem "jekyll-feed", "~> 0.12"
+  gem 'jekyll-seo-tag', '~> 2.6', '>= 2.6.1'
+  gem 'jekyll-paginate', '~> 1.1'
+  gem 'jekyll-sitemap', '~> 1.3', '>= 1.3.1'
+end
 ```
 
 And then execute:
 
-    $ bundle
+    bundle
 
-Or install it yourself as:
 
-    $ gem install darlog
+Rename `index.markdown` file to `index.html` and replace the content in it with:
 
-Then add the gems theme needs:
+```html
+---
+layout: default
+---
 
-    gem install jekyll-seo-tag
-    gem install jekyll-paginate
-    gem install jekyll-sitemap
+
+
+<ul class="posts-container">
+  {% for post in paginator.posts %}
+  <li class="post">
+    <div class="post-title">
+      <a href="{{ post.url | prepend: site.baseurl | replace: '//', '/' }}">{{ post.title }}</a>
+    </div>
+    
+    <span class="post-author">{{ post.author}}</span>
+    <span class="post-delimiter">•</span>
+    <span class="post-date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date_to_string }}</span>
+
+    <p class="post-preview">{{ post.content | strip_html | truncatewords:40 }}</p>
+  </li>
+  {% endfor %}
+</ul>
+```
+
+If you get this error `Unable to load the EventMachine C extension; To use the pure-ruby reactor, require 'em/pure_ruby'` use this two commands:
+
+    gem uninstall eventmachine
+    gem install eventmachine --platform ruby
+
+
+Make folder in your root directory with the name of `css` and in it make a file with the name `main.scss` in it paste this:
+
+```scss
+---
+#
+---
+@import "style";
+```
+
+Make a file in your root directory with the name of `archive.md` and paste
+in it:
+
+```html
+---
+layout: page
+title: Archive
+---
+
+<section>
+  {% if site.posts[0] %}
+
+    {% capture currentyear %}{{ 'now' | date: "%Y" }}{% endcapture %}
+    {% capture firstpostyear %}{{ site.posts[0].date | date: '%Y' }}{% endcapture %}
+    {% if currentyear == firstpostyear %}
+        <h3>This year's posts</h3>
+    {% else %}  
+        <h3>{{ firstpostyear }}</h3>
+    {% endif %}
+
+    {%for post in site.posts %}
+      {% unless post.next %}
+        <ul>
+      {% else %}
+        {% capture year %}{{ post.date | date: '%Y' }}{% endcapture %}
+        {% capture nyear %}{{ post.next.date | date: '%Y' }}{% endcapture %}
+        {% if year != nyear %}
+          </ul>
+          <h3>{{ post.date | date: '%Y' }}</h3>
+          <ul>
+        {% endif %}
+      {% endunless %}
+        <li><time>{{ post.date | date:"%d %b" }} - </time>
+          <a href="{{ post.url | prepend: site.baseurl | replace: '//', '/' }}">
+            {{ post.title }}
+          </a>
+        </li>
+    {% endfor %}
+    </ul>
+
+  {% endif %}
+</section>
+```
 
 Finally run it with live reload and stat writing your awesome blog
 
     jekyll serve --livereload
 
-## Usage
+## Additional
 
-Use bundle show minima to see where the theme is located and copy all files
-you need to edit for your needs.
+Include in your posts head a property for author so you can see the posts author.
 
-    $ bundle show minima
+```yaml
+---
+layout: post
+title:  "Welcome to Jekyll!"
+date:   2019-10-27 18:50:32 +0200
+categories: jekyll update
+author: Maverick
+---
+```
+
+Use this command to locate the theme's source files if you need them for any
+purpose of editing the theme by your needs.
+
+    bundle show darlog
+
 
 
 ## Contributing

@@ -6,7 +6,7 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Maverick Cloud"]
   spec.email         = ["feruchio599@gmail.com"]
 
-  spec.summary       = "Dark themed personal blog that can be used for any purpose."
+  spec.summary       = "Darlog theme is a minimalistic dark theme for Jekyll and is suitable for any kind of blogging."
   spec.homepage      = "https://github.com/Arxero/darlog"
   spec.license       = "MIT"
 

@@ -6,7 +6,7 @@ permalink: about
 
 # Darlog blog theme
 
-Darlog theme is minimalistic dark theme and is suitable for any kind of blogging. Theme is made not without the help of [Hacker-Blog](https://github.com/tocttou/hacker-blog) one, thus anything that is true for it
+Darlog theme is a minimalistic dark theme for Jekyll and is suitable for any kind of blogging. Theme is made not without the help of [Hacker-Blog](https://github.com/tocttou/hacker-blog) one, thus anything that is true for it
 is also true for this one so I suggest you go there and checkout the desciption for more details.
 
 [Demo](https://darlog-theme.netlify.com/)
