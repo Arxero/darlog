@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |spec|
   spec.name          = "darlog"
-  spec.version       = "0.1.0"
+  spec.version       = "0.1.1"
   spec.authors       = ["Maverick Cloud"]
   spec.email         = ["feruchio599@gmail.com"]
 
