@@ -7,7 +7,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["feruchio599@gmail.com"]
 
   spec.summary       = "Dark themed personal blog that can be used for any purpose."
-  spec.homepage      = "https://github.com/arxero"
+  spec.homepage      = "https://github.com/Arxero/darlog"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0").select { |f| f.match(%r!^(assets|_layouts|_includes|_sass|LICENSE|README)!i) }
