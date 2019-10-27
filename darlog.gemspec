@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |spec|
   spec.name          = "darlog"
-  spec.version       = "0.1.2"
+  spec.version       = "0.1.3"
   spec.authors       = ["Maverick Cloud"]
   spec.email         = ["feruchio599@gmail.com"]
 
@@ -14,6 +14,6 @@ Gem::Specification.new do |spec|
 
   spec.add_runtime_dependency "jekyll", "~> 4.0"
 
-  spec.add_development_dependency "bundler", "~> 2.0.1"
+  spec.add_development_dependency "bundler", "~> 2.0.2"
   spec.add_development_dependency "rake", "~> 12.0"
 end
