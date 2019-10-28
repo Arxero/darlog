@@ -165,14 +165,19 @@ purpose of editing the theme by your needs.
 
 
 
-## Contributing
-
-Bug reports and pull requests are welcome on GitHub at [theme page](https://github.com/arxero/darlog). This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
-
 ## Customizing
+### Enable Disqus comments
+In `_config.yml` add
+
+```yml
+disqus_shortname: [Your disqus shortname]
+```
+also on every post you would like to have them add at the start
+```yml
+comments: true
+```
 
 ### Configuration variables
-
 Edit the `_config.yml` file and set the following variables:
 
 ```yml
@@ -185,7 +190,7 @@ author:
 
 baseurl: [The base url for this blog.]
 
-paginate: [Number of posts in one paginated section (default: 3)]
+paginate: [Number of posts in one paginated section (default: 4)]
 owner: [Your name]
 year: [Current Year]
 ```
@@ -197,6 +202,10 @@ Additionally, you may choose to set the following optional variables:
 ```yml
 google_analytics: [Your Google Analytics tracking ID]
 ```
+
+## Contributing
+
+Bug reports and pull requests are welcome on GitHub at [theme page](https://github.com/arxero/darlog). This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
 ## License
 
